@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - ".github/workflows/*" #любые изменения в этой директории не будут вызывать actions
+    # paths-ignore:
+    #   - ".github/workflows/*" #любые изменения в этой директории не будут вызывать actions
 jobs:
   test:
     runs-on: ubuntu-latest

@@ -23,7 +23,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     #какой работы надо дождаться чтобы запустить эту работу
-    needs: test
     steps:
       - name: Get reopsitory code
         uses: actions/checkout@v4
@@ -38,7 +37,7 @@ jobs:
         run: npm run lint
   build:
     runs-on: ubuntu-latest
-    needs: lint
+    needs: [lint, test]
     steps:
       - name: Get reopsitory code
         uses: actions/checkout@v4
